@@ -62,7 +62,6 @@ import jenkins.MasterToSlaveFileCallable;
 public class OBSUploadStep extends Step {
 
 	private final String bucket;
-	private ObsClient obs;
 	private String file;
 	private String text;
 	private String path = "";
@@ -70,7 +69,6 @@ public class OBSUploadStep extends Step {
 	private String excludePathPattern;
 	private String workingDir;
 	private String[] metadatas;
-	private boolean verbose = true;
 
 	@DataBoundConstructor
 	public OBSUploadStep(String bucket) {
@@ -152,15 +150,6 @@ public class OBSUploadStep extends Step {
 		}
 	}
 
-	@DataBoundSetter
-	public void setVerbose(boolean verbose) {
-		this.verbose = verbose;
-	}
-
-	public boolean getVerbose() {
-		return this.verbose;
-	}
-
 	@Override
 	public StepExecution start(StepContext context) throws Exception {
 		return new OBSUploadStep.Execution(this, context);
@@ -206,7 +195,6 @@ public class OBSUploadStep extends Step {
 			final String excludePathPattern = this.step.getExcludePathPattern();
 			final String workingDir = this.step.getWorkingDir();
 			final Map<String, String> metadatas = new HashMap<>();
-			final boolean verbose = this.step.getVerbose();
 			boolean omitSourcePath = false;
 			boolean sendingText = false;
 			String localPath = null;
