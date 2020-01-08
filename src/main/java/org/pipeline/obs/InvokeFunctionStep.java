@@ -148,10 +148,10 @@ public class InvokeFunctionStep extends Step {
 				listener.getLogger().format("Get functionlist failed!%n");
 			}
 
-			if (functionUrn == "") {
+			/*if (functionUrn == "") {
 				throw new RuntimeException("Invoke function failed! " +
 					"functionName=" + functionName);
-			}
+			}*/
 
 			Map<String, String> map = new HashMap<String, String>();
 			ObjectMapper mapper = new ObjectMapper();
