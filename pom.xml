@@ -7,7 +7,7 @@
         <version>3.18</version>
         <relativePath />
     </parent>
-    <artifactId>pipeline-huaweicloud</artifactId>
+    <artifactId>pipeline-huaweicloud-plugin</artifactId>
     <version>0.0.3-SNAPSHOT</version>
     <packaging>hpi</packaging>
     <name>Pipeline: HuaweiCloud Steps</name>
